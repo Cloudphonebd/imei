@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud Phone BD | Premium Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -19,9 +22,9 @@
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            height: 100vh; 
+            min-height: 100vh; 
             color: white;
-            overflow: hidden;
+            padding: 20px;
         }
 
         @keyframes gradientBG {
@@ -34,10 +37,10 @@
             background: rgba(255, 255, 255, 0.05); 
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            padding: 50px 30px; 
+            padding: 40px 30px; 
             border-radius: 30px; 
             box-shadow: 0 25px 45px rgba(0,0,0,0.3); 
-            width: 90%; 
+            width: 100%; 
             max-width: 420px; 
             text-align: center; 
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -49,42 +52,41 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h2 { 
-            font-size: 24px; 
-            margin-bottom: 20px; 
-            line-height: 1.4;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .badge {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            letter-spacing: 1px;
         }
 
-        p {
-            font-size: 14px;
-            margin-bottom: 25px;
-            color: rgba(255, 255, 255, 0.8);
+        h2 { 
+            font-size: 22px; 
+            margin-bottom: 15px; 
+            line-height: 1.4;
+            font-weight: 700;
         }
 
         input[type="text"] { 
             width: 100%; 
             padding: 15px; 
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border: 2px solid rgba(255, 255, 255, 0.2); 
             border-radius: 12px; 
             font-size: 16px; 
             background: rgba(255, 255, 255, 0.1);
             color: white;
             outline: none;
-            transition: 0.3s;
             text-align: center;
-        }
-
-        input[type="text"]::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            transition: 0.3s;
         }
 
         input[type="text"]:focus {
-            background: rgba(255, 255, 255, 0.2);
             border-color: #00d2ff;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         button { 
@@ -97,50 +99,70 @@
             font-size: 18px; 
             font-weight: 800; 
             cursor: pointer; 
-            transition: all 0.4s;
+            transition: 0.3s;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
         }
 
         button:hover { 
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.6);
-            letter-spacing: 2px;
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+        }
+
+        /* সোশ্যাল আইকন সেকশন */
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 28px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        /* ইউটিউব ব্র্যান্ড কালার */
+        .fa-youtube:hover {
+            color: #FF0000;
+            transform: translateY(-3px);
+        }
+
+        /* ইনস্টাগ্রাম ব্র্যান্ড কালার */
+        .fa-instagram:hover {
+            color: #E1306C;
+            transform: translateY(-3px);
         }
 
         .footer {
-            margin-top: 35px;
+            margin-top: 25px;
             font-size: 12px;
             color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* সাকসেস মেসেজ ডিজাইন */
-        .badge {
-            display: inline-block;
-            background: rgba(0, 210, 255, 0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            letter-spacing: 1px;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
-    <div class="badge">SECURE CONNECTION</div>
+    <div class="badge"><i class="fas fa-shield-alt"></i> SECURE ENCRYPTION</div>
     <h2>Submit your IMEI number here to get all the apps of Cloud Phone.</h2>
-    <p>Unlock premium features in seconds</p>
     
     <form action="https://formspree.io/f/xeezzqnp" method="POST">
-        <input type="text" name="IMEI_Number" placeholder="Enter 15-digit IMEI" required minlength="15" maxlength="15" autocomplete="off">
+        <input type="text" name="IMEI_Number" placeholder="Enter 15-digit IMEI" required minlength="15" maxlength="15">
         <button type="submit">Submit Now</button>
     </form>
+
+    <div class="social-links">
+        <a href="https://youtube.com/@cloudphonebd?si=WhMZzmdhhuK4uKsL" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/cloudphonebd?igsh=dmJwNHl2NDZocHZ1" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
 
     <div class="footer">
         © Cloud phone BD
