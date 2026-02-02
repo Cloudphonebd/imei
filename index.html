@@ -3,75 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Phone IMEI Submission</title>
+    <title>Cloud Phone BD | Premium Access</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body { 
-            font-family: 'Arial', sans-serif; 
-            background-color: #f4f7f9; 
+            font-family: 'Poppins', sans-serif; 
+            background: radial-gradient(circle at top right, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             display: flex; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
-            margin: 0; 
+            color: white;
+            overflow: hidden;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container { 
-            background: #ffffff; 
-            padding: 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1); 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 50px 30px; 
+            border-radius: 30px; 
+            box-shadow: 0 25px 45px rgba(0,0,0,0.3); 
             width: 90%; 
-            max-width: 400px; 
+            max-width: 420px; 
             text-align: center; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         h2 { 
-            font-size: 20px; 
-            color: #333; 
+            font-size: 24px; 
             margin-bottom: 20px; 
-            line-height: 1.5;
+            line-height: 1.4;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         input[type="text"] { 
             width: 100%; 
-            padding: 12px; 
-            margin-bottom: 20px;
-            border: 2px solid #ddd; 
-            border-radius: 8px; 
-            font-size: 16px; 
-            box-sizing: border-box;
-        }
-        input[type="text"]:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-        button { 
-            background-color: #007bff; 
-            color: white; 
-            border: none; 
             padding: 15px; 
-            width: 100%; 
-            border-radius: 8px; 
-            font-size: 18px; 
-            font-weight: bold; 
-            cursor: pointer; 
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 12px; 
+            font-size: 16px; 
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
             transition: 0.3s;
+            text-align: center;
         }
+
+        input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        input[type="text"]:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+        }
+
+        button { 
+            background: linear-gradient(45deg, #00d2ff, #92fe9d);
+            color: #00332e; 
+            border: none; 
+            padding: 16px; 
+            width: 100%; 
+            border-radius: 12px; 
+            font-size: 18px; 
+            font-weight: 800; 
+            cursor: pointer; 
+            transition: all 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+        }
+
         button:hover { 
-            background-color: #0056b3; 
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.6);
+            letter-spacing: 2px;
         }
+
         .footer {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #888;
+            margin-top: 35px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* সাকসেস মেসেজ ডিজাইন */
+        .badge {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
+    <div class="badge">SECURE CONNECTION</div>
     <h2>Submit your IMEI number here to get all the apps of Cloud Phone.</h2>
+    <p>Unlock premium features in seconds</p>
     
     <form action="https://formspree.io/f/xeezzqnp" method="POST">
-        <input type="text" name="IMEI_Number" placeholder="Enter 15-digit IMEI" required minlength="15" maxlength="15">
-        <button type="submit">Submit</button>
+        <input type="text" name="IMEI_Number" placeholder="Enter 15-digit IMEI" required minlength="15" maxlength="15" autocomplete="off">
+        <button type="submit">Submit Now</button>
     </form>
 
     <div class="footer">
